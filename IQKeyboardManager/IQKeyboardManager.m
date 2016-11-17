@@ -797,9 +797,10 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
                     move -= (shouldOffsetY-superScrollView.contentOffset.y);
                 }
 
-                
+                // MF: COmmented out following on 11/17/16 to allow decent scrolling along with goNext() within UICollectionView... 
                 //Getting problem while using `setContentOffset:animated:`, So I used animation API.
-                [UIView animateWithDuration:_animationDuration delay:0 options:(_animationCurve|UIViewAnimationOptionBeginFromCurrentState) animations:^{
+               /*
+ [UIView animateWithDuration:_animationDuration delay:0 options:(_animationCurve|UIViewAnimationOptionBeginFromCurrentState) animations:^{
                     
                     [self showLog:[NSString stringWithFormat:@"Adjusting %.2f to %@ ContentOffset",(superScrollView.contentOffset.y-shouldOffsetY),[superScrollView _IQDescription]]];
                     [self showLog:[NSString stringWithFormat:@"Remaining Move: %.2f",move]];
@@ -807,6 +808,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
                     superScrollView.contentOffset = CGPointMake(superScrollView.contentOffset.x, shouldOffsetY);
 
                 } completion:NULL];
+*/
 
                 //  Getting next lastView & superScrollView.
                 lastView = superScrollView;
